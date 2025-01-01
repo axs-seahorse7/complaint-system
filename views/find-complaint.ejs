@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>find/complaint</title>
+</head>
+<style>
+    .input-no-arrows::-webkit-inner-spin-button,
+    .input-no-arrows::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+</style>
+<body>
+    <div class="main h-screen w-full flex-col border">
+        <nav  class="flex items-center justify-end gap-6 pr-20  fixed z-10 w-full h-20">
+            <button class="border-none bg-slate-400 rounded-md px-3 py-1">Raise Your New Complaint </button>
+        </nav>
+        <div class="h-screen w-full flex flex-col gap-6 justify-center items-center">
+            <div class="search">
+            <label for="in-compl" class="tracking-wide cursor-pointer">Find Your Complaint</label>
+            <input type="number" id="in-compl" placeholder="Paste Your Complaint id " class="text focus:outline-none input-no-arrows border border-r-0 px-5 py-1 rounded-l-full" >
+            <i class="ri-search-2-line border border-l-0 p-2 pr-3 cursor-pointer ml-[-25px] rounded-r-full"></i> 
+            </div>
+
+            <div class="card flex  flex-col h-60 w-80 border rounded-md">
+                <div class="prof-det w-full h-20 p-3 border-b flex justify-normal flex-col">
+                    <div class="user">user</div>
+                    <div>Complaint ID : </div>
+                </div>
+                <div class="user-det">
+                    <h3>this is a mango</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

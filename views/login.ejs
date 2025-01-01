@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authority Login</title>
+  <link rel="stylesheet" href="./stylesheets/output.css">
+  <link rel="stylesheet" href="./stylesheets/login.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+  <main class="h-screen w-full flex items-center justify-center bg-gradient-to-r  from-slate-300 to-slate-500">
+    <div class="container h-4/5 opacity-75 w-2/5 py-3 border-2 bg-zinc-300 rounded-lg flex items-center justify-center flex-col gap-4 ">
+      <h1 class="m-4  tracking-wide text-xl text-left">Authority Login</h1>
+        <form action="/login" method="post" class="flex flex-col gap-2">
+          <label for="author">Author ID:</label>
+          <input type="text" id="author" placeholder="Author ID" name="authorID" required>
+      
+          <!-- <label for="username" >Username:</label>
+          <input type="text" id="username" placeholder="username" name="username" required class="focus:border-none"> -->
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="password" name="password" required>
+          
+          <button type="submit" class="bg-gradient-to-r from-slate-500 to-green-700 p-2 rounded font-semibold text-lg focus:border-none">Login</button>
+          <div class="flex justify-between items-center">
+            <span class="w-2/4 border-gray-800"> <hr></span>
+            <span class="mx-4"> or </span>
+            <span class="w-2/4"> <hr></span>
+          </div>
+          <div class="butt flex gap-1">
+            <button class="bg-zinc-700 p-2 gap-1 flex justify-center tracking-wide rounded w-2/4 text-xl"><i class="ri-google-line"></i><span>Google</span></button>
+            <button class="bg-zinc-700 p-2 tracking-wide rounded w-2/4 text-xl"><i class="ri-facebook-fill"></i>Facebook</button>
+          </div>
+          <a href="#" class="text-sm text-blue-600 underline text-center m-auto">forget password or username </a>
+        </form>
+    </div>
+  </main>
+</body>
+</html>

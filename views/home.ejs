@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/stylesheets/home.css">
+        <link rel="stylesheet" href="/stylesheets/output.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="max-480:h-14">
+        <button id="complaint" class="comp max-480:text-[10px] max-480:py-2 max-480:px-2 max-480:rounded">Find Your Complaint <i class="ri-arrow-right-line"></i></button>
+        <button id="login" class="max-480:text-[10px] max-480:py-2 max-480:px-2 max-480:rounded">Authority Login</button>
+    </nav>
+    <main class="h-screen">
+        <div class="container min-w-full pt-28 gap-5 max-480:gap-10">
+            <div class="image  max-480:min-w-full">
+                <img src="/images/5350258.jpg" class="max-480:min-w-full">
+            </div>
+            <div>
+                <h3 class="top-line text-center content-center">Complaint Managment</h3>
+                <div class=" w-full text-3xl max-480:text-lg">A batter system for complaint management</div>
+                <h4 class="btm-line max-480:text-[10px] text-center">Raise Your Complain Now </h4>
+                <Button id="red" class="mt-5 items-center m-auto">Raise your complain here <i class="ri-arrow-right-line"></i></Button>
+            </div>
+        </div>
+    </main>
+</body>
+    <script>
+            document.getElementById('red').addEventListener('click', function(){
+                window.location.href = '/complaint';
+            });
+
+            document.getElementById('login').addEventListener('click', ()=>{
+                window.location.href = '/login';
+            });
+
+            document.getElementById('complaint').addEventListener('click', function(){
+                window.location.href = '/findComplaint'
+            })
+    </script>
+</html>

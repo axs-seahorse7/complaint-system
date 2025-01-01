@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="r">
+    <main class="h-screen w-full flex items-center justify-center relative">
+        <div class="max-480:px-2 flex flex-col gap-3 max-480:absolute max-480:top-[15%] left-0">
+            <h2 class="font-semibold text-emerald-800">Thanks <%= username %> !</h2>
+            <h2 class="font-semibold text-emerald-800"> Your complaints has been sussecfully raised at Goverment Authority. </h2>
+            <h2 class="text-center font-semibold text-gray-500">Our Team contact you as soon as posible</h2>
+            <div>   
+              <h3 id="cp-btn" class="font-semibold text-center text-gray-300 bg-slate-700 rounded-md py-2 tracking-wider cursor-pointer">Your Complaint ID : <span id="complaintID"> <%= complaint %> </span>  <span id="copyButton" class=" cursor-pointer"> <i class="ri-file-copy-line"></i> </span></h3>
+              <h6 class="text-gray-500 capitalize mt-1 max-480:text-[12px]">Do not forget to copy & save you complaint ID </h6>
+            </div>
+            <Button id="red" class="px-4 py-2 mt-2 uppercase text-sm rounded bg-slate-600 tracking-wide font-semibold text-gray-300">see your complaints <i class="ri-arrow-right-up-fill"></i> </Button>
+        </div>  
+    </main>
+
+</body>
+<script>
+    document.getElementById('red').addEventListener('click', function(e){
+        window.location.href = '/findComplaint'
+    })
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyIcon = document.getElementById('copyButton');
+    const copyButton = document.getElementById('cp-btn');
+    const complaintIDElement = document.getElementById('complaintID');
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(complaintIDElement.textContent);
+      copyIcon.innerHTML = '';
+      copyIcon.innerHTML = '<i class="ri-file-copy-fill"></i>'
+      setTimeout(() => {
+        copyIcon.innerHTML = '<i class="ri-file-copy-line"></i>' // Reset button text after 2 seconds
+      }, 2000);
+    });
+  });
+
+</script>
+</html>

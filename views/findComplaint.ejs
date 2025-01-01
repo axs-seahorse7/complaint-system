@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+</head>
+<body>
+    <div class="h-screen w-full flex justify-items-center items-center bg-slate-900 max-480:relative">
+        <div class="form  gap-5 flex-col w-full flex items-center justify-center max-480:absolute max-480:top-[10%] left-0 max-480:px-2">
+            <div class="flex items-center justify-center px-5 gap-5 bg-slate-500 rounded py-3 ">
+                <form action="/fetchComplaint" method="post">
+                    <label for="complaint-inbox">Enter Your Complain ID You Copied!</label>
+                    <input type="text" name="complaint" placeholder="Enter Your Complaint ID... " class="focus:outline-none border-none px-2 py-1 rounded text-gray-300 bg-slate-800 max-480:w-full"> 
+                    <div></div>
+                    <button class="bg-slate-800 shadow-md active:shadow-sm shadow-black tracking-wider text-gray-300 rounded w-full mt-3 active:bg-slate-700 px-4 py-2">Find</button>   
+                </form>
+            </div>
+            <% if(userComplaint){ %>
+            <div class=" flex flex-col max-480:w-[390px] w-[500px] px-1 max-480:px-2 justify-center items-center">
+                <div class="flex px-3 py-2 bg-slate-700 rounded w-full items-center justify-between text-gray-300">
+                    <div class="flex gap-4 items-center">
+                        <div class="h-10 max-480:h-8 max-480:w-8 w-10 max-480:text-[14px] rounded-full bg-slate-800 flex items-center justify-center">
+                            <% if(userComplaint.username){ %>
+                                <%= userComplaint.username.charAt(0).toUpperCase() %>
+                                <% } else { %>
+                                    ?
+                                    <% } %>
+                                </div>
+                                <div class="capitalize max-480:text-[10px]"><%= userComplaint.username %></div> 
+                    </div>
+
+                    <div class="max-480:text-[10px]"> <span>Complaint ID : </span><%= userComplaint.ID %> </div>
+
+                </div>
+                <div class="text-gray-300 flex justify-start mt-5 flex-col w-[500px] max-480:w-[390px] max-480:px-1">
+                    <div class="flex justify-between items-center px-2 w-full">
+                        <span class="text-gray-400 mb-5">Your Complaint </span>
+                        <span id="status" class="text-gray-400 mb-5 rounded-full bg-slate-800 px-3 py-1 capitalize select-none"><%- userComplaint.status %> </span>
+                    </div>
+                    <div style="scrollbar-width: none;" class="w-full bg-slate-900 rounded-lg px-4 py-2 whitespace-pre-wrap max-h-64 overflow-x-hidden overflow-y-auto">
+                        <%= userComplaint.complaint %>
+                    </div>
+                    <div class="flex justify-end mt-2 text-orange-500 ">
+                        <button class="px-3 py-1 rounded-lg bg-slate-800 shadow-sm active:shadow active:bg-slate-700 shadow-black  text-[14px]">Request for Cancel</button>
+                    </div>
+                </div>
+            </div> <% }%>
+        </div>
+    </div>
+</body>
+<script src="./javascripts/fincomplaint.js"></script>
+</html>
